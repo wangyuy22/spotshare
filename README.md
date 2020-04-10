@@ -1,7 +1,7 @@
 # CIS-196 - Final Project
-**Milestone 1 Due:** Sunday, April 19th
-**Milestone 2 Due:** Wednesday, April 29th, 11:59pm (last day of class)
-**Demo Due:** Sunday, May 10th
+* **Milestone 1 Due:** Sunday, April 19th
+* **Milestone 2 Due:** Wednesday, April 29th, 11:59pm (last day of class)
+* **Demo Due:** Sunday, May 10th
 
 ## I. Requirements
 Your final project needs to demonstrate sufficient technical complexity. Here are a few requirements:
@@ -44,7 +44,7 @@ Take a look at [the awesome ruby repo](https://github.com/markets/awesome-ruby) 
 ## III. Deadlines
 
 ### Milestone 1
-For this milestone, you need to submit a 1-2 page "Project Proposal" by **Sunday, April 19th** according to the Project Proposal Template
+For this milestone, you need to submit a 1-2 page "Project Proposal" by **Sunday, April 19th** according to [the Project Proposal Template](https://gitlab.com/cis-196-assignments/final-project/-/blob/master/Proposal%20Template.md)
 * summarize your idea
 * include a database relation diagram like that of HW3's in your project proposal
 * Discuss step by step how you are going to implement this project
