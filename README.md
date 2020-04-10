@@ -61,9 +61,9 @@ For this milestone, you need to submit a 1-2 page "Project Proposal" by **Sunday
 7. Set up associations and add validations to the models.
 8. Test your models in the Rails Console (or write your own tests) and commit again when everything is working as expected.
    - Note that you are not restricted to the database that we discussed in your proposal. You can make additional changes as you develop the application, but this should give you a good place to start.
-9. Spend some time thinking about all of the routes and views that you will need for your application. Especially consider these in relation to the routes that you've scaffolded already.
-10. Start implementing the controllers, routes, and views in a flow that makes sense to you.
-  - Regardless of how you go about this, you should **commit early and often**.
+1. Spend some time thinking about all of the routes and views that you will need for your application. Especially consider these in relation to the routes that you've scaffolded already.
+2. Implement the controllers, routes, and views in a flow that makes sense to you.
+    * Regardless of how you go about this, you should **commit early and often**.
 
 By the end of milestone 2 you should have a working prototype of your project, although the view files of the project may not be very sophisticated.
 
