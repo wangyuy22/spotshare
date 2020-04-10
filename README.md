@@ -47,7 +47,9 @@ Take a look at [the awesome ruby repo](https://github.com/markets/awesome-ruby) 
 For this milestone, you need to submit a 1-2 page "Project Proposal" by **Sunday, April 19th** according to [the Project Proposal Template](https://gitlab.com/cis-196-assignments/final-project/-/blob/master/Proposal%20Template.md)
 * summarize your idea
 * include a database relation diagram like that of HW3's in your project proposal
-* Discuss step by step how you are going to implement this project
+* discuss the third-party gem(s) you are going to use in your project and what it provides in terms of features
+* discuss the third-party API(s) you are going to use in your project and what data it provides.
+* discuss step by step how you are going to implement this project
 
 ### Milestone 2
 1. Start by creating a new Rails project.

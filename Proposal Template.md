@@ -7,6 +7,11 @@
 
 ## Database Schema
 
+## Third Party Utilities
+##### Gem(s)
+
+##### API(s) 
+
 
 ## Build Plan
 ### Step 1:
