@@ -55,7 +55,6 @@ For this milestone, you need to submit a 1-2 page "Project Proposal" by **Sunday
 1. Start by creating a new Rails project.
 2. Create a _private_ GitLab repository on your personal account.
 3. Follow the instructions on the GitLab repo to make your first commit and push it up to GitLab.
-  - Come to Office Hours or consult Google for help on this.
 4. **Post privately to your GitLab repository.**
 5. Think about the database tables in your project proposal and determine which generator makes the most sense for each one.
 6. Generate all of the tables with the appropriate generator (this would be a great place to make another commit).
