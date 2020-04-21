@@ -36,7 +36,7 @@ I was not sure how to insert images so here are the tables. The references will 
 | id (int) |
 | title (string) | 
 | artist (string) |
-| length (int) |
+| length_mins (int) |
 
 ## Third Party Utilities
 ##### Gem(s)
