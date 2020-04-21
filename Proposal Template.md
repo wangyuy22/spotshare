@@ -27,7 +27,7 @@ I was not sure how to insert images so here are the tables. The references will 
 | total_hours (int) |
 
 | registrations |
-| ------ | ------ |
+| ------ |
 | playlist (refrences) |
 | song (references) | 
 
@@ -51,5 +51,9 @@ Spotify API
 ### Step 1: First create the user class just as we did in HW3. Implement the sign up/log in as well as allowing for profile pictures.
 
 ### Step 2: Create the other models playlists, registrations, and songs.
+
+### Step 3: Work on allowing users to first create playlists, and then adding songs to the playlist by searching for them using the API.
+
+### Step 4: Work on the finishing touches such as displaying all the information and configuring the routes.
 
 
