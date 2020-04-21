@@ -7,6 +7,12 @@
 
 ## Database Schema
 
+| users |
+| ------ |
+| id (int) |
+| username (string) | 
+| password_hash (string |
+
 ## Third Party Utilities
 ##### Gem(s)
 
