@@ -1,11 +1,14 @@
 # Project Proposal
-* Name (PennKey): 
-* Project Name: 
+* Name (PennKey):  wangyuy
+* Project Name: SpotShare
 
 ## Description
 
+Allows users to create a collection of playlists with songs from Spotify.
 
 ## Database Schema
+
+
 
 ## Third Party Utilities
 ##### Gem(s)
