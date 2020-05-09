@@ -1,0 +1,115 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-4" style="padding: 2%;">
+    <div class="card" style="width: 100%; background-color: #1f1b1b"> 
+      <div class="card-body">
+        <h1 class="card-title">
+        <%= "@#{@user.username}" %>
+          </h1>
+          
+          <h6 class="card-subtitle mb-2 text-muted"> 
+            <%= "First name: #{@user.first_name} " %>
+          </h6>
+          <h6 class="card-subtitle mb-2 text-muted"> 
+            <%= "Last name: #{@user.last_name} " %>
+          </h6>
+          <h6 class="card-subtitle mb-2 text-muted"> 
+            <%= "#{@user.playlists.length} songs" %>
+          </h6>
+        </div>
+        <div class="card-body">
+          <% if @user == current_user%>
+            <a><%= link_to 'Edit', edit_user_path(@user), class: "card-link" %></a>
+            <a><span style="color: #ffffff">  |  </span></a><%= link_to 'Delete Account', user_path(@user), :method => :delete, data: { confirm: 'Are you sure?'}, class: "card-link" %></a>
+          <% end %>
+        </div>
+      </div> 
+    </div>
+  </div>
+
+
+
+
+<h1><%= "#{@user.first_name}'s Playlists:" %></h1>
+
+<% if @user == current_user%>
+  <%= link_to 'New Playlist', new_playlist_path, class: "card-link" %>
+<% end %>
+
+<div class="row">
+    <% @user.playlists.each do |playlist| %>
+      <% if playlist.owner == @user.username %>
+        <div class="col-4" style="padding: 2%;">
+          <div class="card" style="width: 100%; background-color: #1f1b1b">
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= playlist.title %>
+              </h5>
+              <h6 class="card-subtitle mb-2 text-muted">
+                <%= "Follower(s): #{playlist.users.length}" %>
+              </h6>
+              <h6 class="card-subtitle mb-2 text-muted">
+                <%= "Song(s): #{playlist.songs.length}" %>
+              </h6>
+              <h6 class="card-subtitle mb-2 text-muted">
+                <%= "Description: #{playlist.description}" %>
+              </h6>
+              <p class="card-text">
+              </p>
+            </div>
+            <div class="card-body">
+              <a><%= link_to "See Playlist", playlist_path(playlist.id), :method => :get, class: "card-link" %></a>
+              <% if playlist.owner == current_user.username%>
+                <a><span style="color: #ffffff">  |  </span><%= link_to "Edit", edit_playlist_path(playlist.id), :method => :get, class: "card-link" %></a>
+                <a><span style="color: #ffffff">  |  </span><%= link_to "Delete", playlist_path(playlist.id), :method => :delete,  data: { confirm: 'Are you sure?'}, class: "card-link" %></a>
+              <% else %>
+                <% if playlist.users.include?(current_user)%>
+                  <a><span style="color: #ffffff">  |  </span><%= link_to 'Unfollow',  "/unfollow_playlist/#{current_user.id}/#{playlist.id}", :method => :delete, class: "card-link" %></a>
+                <% else %>
+                  <a><span style="color: #ffffff">  |  </span><%= link_to 'Follow',  "/follow_playlist/#{current_user.id}/#{playlist.id}", :method => :post, class: "card-link" %></a>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <h1><%= "Following:" %></h1>
+
+  <div class="row">
+    <% @user.playlists.each do |playlist| %>
+      <% if playlist.owner != @user.username %>
+        <div class="col-4" style="padding: 2%;">
+          <div class="card" style="width: 100%; background-color: #1f1b1b">
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= playlist.title %>
+              </h5>
+              <h6 class="card-subtitle mb-2 text-muted">
+                <%= "Follower(s): #{playlist.users.length}" %>
+              </h6>
+              <h6 class="card-subtitle mb-2 text-muted">
+                <%= "Song(s): #{playlist.songs.length}" %>
+              </h6>
+              <h6 class="card-subtitle mb-2 text-muted">
+                <%= "Description: #{playlist.description}" %>
+              </h6>
+              <p class="card-text">
+              </p>
+            </div>
+            <div class="card-body">
+              <a><%= link_to "See Playlist", playlist_path(playlist.id), :method => :get, class: "card-link" %></a>
+                <% if playlist.users.include?(current_user)%>
+                  <a><span style="color: #ffffff">  |  </span><%= link_to 'Unfollow',  "/unfollow_playlist/#{current_user.id}/#{playlist.id}", :method => :delete, class: "card-link" %></a>
+                <% else %>
+                  <a><span style="color: #ffffff">  |  </span><%= link_to 'Follow',  "/follow_playlist/#{current_user.id}/#{playlist.id}", :method => :post, class: "card-link" %></a>
+                <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>

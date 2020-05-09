@@ -1,0 +1,154 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ * 
+ *= require_tree .
+ *= require_self
+ */
+
+$theme-colors: (
+  "primary":#1DB954,
+  "secondary": #191414
+);
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Gentium+Basic&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+@import "bootstrap";
+@import "font-awesome";
+
+/* 
+ * Custom Styles
+ */
+
+ body {background-color:  #191414;}
+
+.navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+}
+
+.navbar-brand:hover {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #1DB954;
+  color:  #191414 !important; 
+}
+
+a.nav-link {
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+}
+
+a.nav-link:hover {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #1DB954;
+  color:  #191414 !important; 
+}
+
+h1 {
+  font-size: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #1DB954;
+  font-weight: 500;
+  line-height: 1.25;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  font-size: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #1DB954;
+  font-weight: 300;
+  line-height: 1.25;
+  margin: 2em 0 .67em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+  font-size: 16px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  color: #1DB954;
+  font-weight: 300;
+  line-height: 1.25;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h4 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+p {
+  font-size: 18px;
+  color: #FFFFFF;
+  font-family: "Open Sans",sans-serif;
+  line-height: 1.5;
+  font-weight: 100;
+  text-rendering: optimizeLegibility;
+}
+
+li {
+  line-height: 1.5;
+  font-family: "Open Sans",sans-serif;
+  color: #AEAFB3;
+}
+
+footer {
+  margin: 20px;
+  text-align: center;
+  color: #AEAFB3;
+}
+
+.card-title {
+  color: #1DB954;
+}
+
+.btn-outline-secondary {
+  color:  #FFFFFF;
+  background-color:  #1f1b1b;
+}
+
+label {
+  color:  #FFFFFF;
+}
+
+input.btn-secondary {
+  background-color: #191414;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+input.btn-secondary:hover {
+  background-color: #191414;
+  border: 1px solid #1DB954;
+  color: #1DB954;
+  border-radius: 10px;
+}
+
+a.card-link {
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a.card-link:hover {
+  color: #FFFFFF;
+  border-bottom: 1px solid white;
+  background-color:  #1f1b1b;
+}

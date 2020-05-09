@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Playlists</h1>
+
+<%= link_to 'New Playlist', new_playlist_path, class: "card-link" %>
+
+<div class="row">
+    <% @playlists.each do |playlist| %>
+      <div class="col-4" style="padding: 2%;">
+        <div class="card" style="width: 100%; background-color: #1f1b1b">
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= playlist.title %>
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+              <%= "Creator: #{playlist.owner}" %>
+            </h6>
+            <h6 class="card-subtitle mb-2 text-muted">
+                <%= "Follower(s): #{playlist.users.length}" %>
+            </h6>
+            <h6 class="card-subtitle mb-2 text-muted">
+                <%= "Song(s): #{playlist.songs.length}" %>
+            </h6>
+            <h6 class="card-subtitle mb-2 text-muted">
+              <%= "Desrciption: #{playlist.description}" %>
+            </h6>
+            <p class="card-text">
+              
+            </p>
+            <a><%= link_to "See Playlist", playlist, :method => :get, class: "card-link" %></a>
+            <% if playlist.owner == current_user.username %>
+              <a><span style="color: #ffffff"> | </span></a><%= link_to "Edit Playlist", edit_playlist_path(playlist), :method => :get, class: "card-link" %></a>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+
+<br>
+
+

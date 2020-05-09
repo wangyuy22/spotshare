@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<% @track = @song.track %>
+
+<div class="row">
+  <div class="col-8" style="padding: 2%;">
+    <div class="card" style="width: 100%; background-color: #1f1b1b"> 
+      <div class="card-body">
+        <h1 class="card-title">
+          <%= "#{@track.name}" %>
+        </h1>
+          <h4 class="card-subtitle mb-2 text-muted"> 
+            <% @artist_list = "" %>
+            <% @track.artists.each_with_index do |artist, index| %>
+              <% index == 0 ? @artist_list.concat(artist.name) : @artist_list.concat(", #{artist.name}")%>
+            <% end %>
+            <%= "Artist(s): #{@artist_list} " %>
+          </h4>
+          <h4 class="card-subtitle mb-2 text-muted"> 
+            <%= "Album: #{@track.album.name} " %>
+          </h4>
+          <h4 class="card-subtitle mb-2 text-muted"> 
+            <%= "Release Date: #{@track.album.release_date} " %>
+          </h4>
+          <h4 class="card-subtitle mb-2 text-muted"> 
+            <%= "Popularity: #{@track.popularity} / 100 " %>
+          </h6>
+          <h4 class="card-subtitle mb-2 text-muted"> 
+            <%= "Duration: #{@song.track_duration} " %>
+          </h4>
+          <div class="card-body">
+            <%= link_to 'Back', playlist_path(@song.playlist), class: "card-link" %>
+            <br>
+          </div>
+        </div>
+      </div> 
+    </div>
+
+    <div class="col-4" style="padding: 2%;">
+      <div class="card" style="width: 100%; background-color: #1f1b1b"> 
+        <div class="card-body">
+          <%= content_tag :iframe, '', src:"https://open.spotify.com/embed/track/#{@song.track_url}", width:300, height:380, frameborder:0, allowtransparency:true %> 
+        </div>
+      </div> 
+    </div>
+  </div>
+
+

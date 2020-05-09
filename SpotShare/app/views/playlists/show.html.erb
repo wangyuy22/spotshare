@@ -1,0 +1,93 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-4" style="padding: 2%;">
+    <div class="card" style="width: 100%; background-color: #1f1b1b"> 
+      <div class="card-body">
+        <h1 class="card-title">
+        <%= @playlist.title %>
+          </h1>
+          <h6 class="card-subtitle mb-2 text-muted"> 
+            <%= "Creator: #{@playlist.owner} " %>
+          </h6>
+          <h6 class="card-subtitle mb-2 text-muted">
+                <%= "Follower(s): #{@playlist.users.length}" %>
+          </h6>
+          <h6 class="card-subtitle mb-2 text-muted"> 
+            <%= "Songs: #{@playlist.songs.length}" %>
+          </h6>
+          <h6 class="card-subtitle mb-2 text-muted"> 
+            <%= "Description: #{@playlist.description}" %>
+          </h6>
+        </div>
+        <div class="card-body">
+          <% if @playlist.owner == current_user.username%>
+            <a><<%= link_to 'Edit', edit_playlist_path(@playlist), :method => :get, class: "card-link" %></a>
+            <a><span style="color: #ffffff"> | </span><%= link_to 'Delete', playlist_path(@playlist), :method => :delete , class: "card-link" %></a>
+          <% else %>
+            <% if @playlist.users.include?(current_user)%>
+              <a><%= link_to 'Unfollow',  "/unfollow_playlist/#{current_user.id}/#{@playlist.id}", :method => :delete, class: "card-link" %></a>
+            <% else %>
+              <a><%= link_to 'Follow',  "/follow_playlist/#{current_user.id}/#{@playlist.id}", :method => :post, class: "card-link" %></a>
+            <% end %>
+          <% end %>
+        </div>
+      </div> 
+    </div>
+</div>
+
+<h1>Songs</h1>
+
+<% if @playlist.owner == current_user.username%>
+  <%= link_to 'New Song', new_playlist_song_path(@playlist.id), :method => :get, class: "card-link" %>
+<% end %>
+
+<div class="row">
+    <% @playlist.songs.each do |song| %>
+        <div class="col-4" style="padding: 2%;">
+          <div class="card" style="width: 100%; background-color: #1f1b1b">
+            <div class="card-body">
+              <%= content_tag :iframe, '', src:"https://open.spotify.com/embed/track/#{song.track_url}", width:300, height:380, frameborder:0, allowtransparency:true %> 
+            </div>
+            <div class="card-body">
+              <a><%= link_to 'See Info', playlist_song_path(song.playlist, song), :method => :get, class: "card-link" %>
+              <% if @playlist.owner == current_user.username%>
+                <a><span style="color: #ffffff"> | </span></a><%= link_to 'Remove', playlist_song_path(song.playlist, song), :method => :delete, class: "card-link" %></a>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+
+<br>
+<h1>Comments</h1>
+
+<%= link_to 'New Comment', new_playlist_comment_path(@playlist.id), :method => :get, class: "card-link" %>
+
+<div class="row">
+    <% @playlist.comments.each do |comment| %>
+        <div class="col-4" style="padding: 2%;">
+          <div class="card" style="width: 100%; background-color: #1f1b1b">
+            <div class="card-body">
+              <h1 class="card-title">
+                <%= comment.content %>
+              </h1>
+            <h6 class="card-subtitle mb-2 text-muted"> 
+              <%= "@#{comment.user.username}" %>
+            </h6>
+            </div>
+            <div class="card-body">
+              <% if comment.user == current_user %>
+                <a><%= link_to 'Edit', edit_playlist_comment_path(comment.playlist, comment), :method => :get, class: "card-link" %></a>
+                <a><span style="color: #ffffff"> | </span></a><%= link_to 'Delete', playlist_comment_path(comment.playlist, comment), :method => :delete, class: "card-link" %></a>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+  
+  
+
+<br>

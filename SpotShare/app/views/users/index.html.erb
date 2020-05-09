@@ -1,0 +1,29 @@
+  <p id="notice"><%= notice %></p>
+
+  <h1>Users</h1>
+
+  <div class="row">
+    <% @users.each do |user| %>
+      <div class="col-4" style="padding: 2%;">
+        <div class="card" style="width: 100%; background-color: #1f1b1b">
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= "@#{user.username}" %>
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+              <%= "Total Playlists: #{user.playlists.length}" %>
+            </h6>
+            <p class="card-text">
+              
+            </p>
+            <a><%= link_to "See Profile", user_path(user.id), :method => :get, class: "card-link" %></a>
+            <% if user == current_user %>
+              <a><span style="color: #ffffff"> | </span></a><%= link_to "Edit Profile", edit_user_path(user.id), :method => :get, class: "card-link" %></a>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  
