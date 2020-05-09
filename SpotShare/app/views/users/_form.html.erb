@@ -13,21 +13,21 @@
 
   <div class="field">
     <%= form.label :first_name %>
-    <%= form.text_field :first_name, class: 'form-control'%>
+    <%= form.text_field :first_name, class: 'form-control', autocomplete: 'off'%>
   </div>
 
   <br>
 
   <div class="field">
     <%= form.label :last_name %>
-    <%= form.text_field :last_name, class: 'form-control' %>
+    <%= form.text_field :last_name, class: 'form-control', autocomplete: 'off' %>
   </div>
 
   <br>
 
   <div class="field">
     <%= form.label :username %>
-    <%= form.text_field :username, class: 'form-control' %>
+    <%= form.text_field :username, class: 'form-control', autocomplete: 'off' %>
   </div>
 
   <div class="field">
@@ -35,6 +35,13 @@
     <%= form.password_field :password_hash, class: 'form-control' %>
   </div>
 
+  <div class="field">
+    <%= form.label :avatar %>
+    <br>
+    <%= form.file_field :avatar, class: 'btn btn-secondary' %>
+  </div>
+
+  <br>
 
   <div class="actions">
     <%= form.submit "Submit", class: 'btn btn-secondary' %>

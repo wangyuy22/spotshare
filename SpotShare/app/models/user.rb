@@ -1,8 +1,9 @@
 class User < ApplicationRecord
   has_many :followings, dependent: :destroy
   has_many :playlists, through: :followings
-  
   has_many :comments, dependent: :destroy
+  has_one_attached :avatar
+
 
   validates :first_name, presence: true
   validates :last_name, presence: true

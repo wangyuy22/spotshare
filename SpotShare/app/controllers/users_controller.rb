@@ -47,7 +47,7 @@ class UsersController < ApplicationController
     @user.assign_attributes(user_params)
     @user.password=user_params[:password_hash]
     respond_to do |format|
-      if @user.update(user_params)
+      if @user.save
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -75,7 +75,7 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :username, :password_hash)
+      params.require(:user).permit(:first_name, :last_name, :username, :password_hash, :avatar)
     end
 
     def if_same_user

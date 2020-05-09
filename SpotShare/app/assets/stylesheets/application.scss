@@ -111,7 +111,7 @@ li {
 }
 
 footer {
-  margin: 20px;
+  margin-top: 5%;
   text-align: center;
   color: #AEAFB3;
 }
@@ -152,3 +152,12 @@ a.card-link:hover {
   border-bottom: 1px solid white;
   background-color:  #1f1b1b;
 }
+
+img {
+  display: block;
+  width: 100%;
+  max-width:350px;
+  height: auto;
+}
+
+

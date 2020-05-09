@@ -6,10 +6,16 @@
     <% @users.each do |user| %>
       <div class="col-4" style="padding: 2%;">
         <div class="card" style="width: 100%; background-color: #1f1b1b">
+        <% if user.avatar.attached? %>
+          <img class="card-img-top" src="<%= url_for(user.avatar) %>" height='100px', width='100px', alt="Card image cap">
+        <% else %>
+           <img class="card-img-top" src="/assets/default_pic.jpg" height='100px', width='200px', alt="Nope">
+        <% end %>
           <div class="card-body">
             <h5 class="card-title">
               <%= "@#{user.username}" %>
             </h5>
+
             <h6 class="card-subtitle mb-2 text-muted">
               <%= "Total Playlists: #{user.playlists.length}" %>
             </h6>
@@ -25,5 +31,6 @@
       </div>
     <% end %>
   </div>
+
 
   
